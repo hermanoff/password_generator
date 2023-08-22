@@ -5,25 +5,41 @@ import sys
 letters = string.ascii_letters
 digits = string.digits
 special_chars = string.punctuation
-alphabet = letters + digits + special_chars
 
 
 def main():
-    pwd_length = int(sys.argv[1])
-    if pwd_length >= 8:
-        pwd = ''
+    args = sys.argv[1:]
 
-        try:
-            for i in range(pwd_length):
-                pwd += ''.join(secrets.choice(alphabet))
-            print(f'Generated password:\n{pwd}')
-            return (pwd)
+    if not args:
+        print('Usage: [--charonly] password_length')
+        sys.exit(1)
 
-        except:
-            return ("There was an error!")
+    if args[0] != '--charonly':
+        alphabet = letters + digits + special_chars
+        pwd_length = int(args[0])
+        if pwd_length >= 8:
+            pwd = ''
+            try:
+                for i in range(pwd_length):
+                    pwd += ''.join(secrets.choice(alphabet))
+                print(f'Generated password:\n{pwd}')
+                # return (pwd)
+            except:
+                print("There was an error! (1)")
 
-    else:
-        print(f'Not secure enough, password should have at least 8 characters')
+    if args[0] == '--charonly':
+        pwd_length = int(args[1])
+        alphabet = letters + digits
+        if pwd_length >= 8:
+            pwd = ''
+            try:
+                for i in range(pwd_length):
+                    pwd += ''.join(secrets.choice(alphabet))
+                print(f'Generated password:\n{pwd}')
+                # return (pwd)
+
+            except:
+                print("There was an error! (2)")
 
 
 if __name__ == '__main__':
