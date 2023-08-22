@@ -27,7 +27,9 @@ Before using this password generator, use :
 
 IT IS ALSO IMPORTANT FOR YOUR PYTHON AND PIP PACKAGES TO BE READ FROM THE SAME PLACE IN ORDER FOR THIS TO WORK PROPERLY
 
--   Mac users will probably encounter this error, to resolve, use full path to your python and pip packages, for example:
+-   Mac users will probably encounter this error to resolve use full path to your python and pip packages(same applies when creating alias)
+
+    for example:
 
 ```
   /opt/homebrew/bin/pip3 install -r requirements
