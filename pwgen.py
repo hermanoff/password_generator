@@ -18,6 +18,9 @@ def generate_password(length, char_range):
             return pwd
         except:
             print('There was an error!')
+    else:
+        print('Password should be at least 8 characters long')
+        sys.exit(1)
 
 
 def copy_to_clipboard(text):
