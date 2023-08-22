@@ -7,6 +7,17 @@ digits = string.digits
 special_chars = string.punctuation
 
 
+def generate_password(length, char_range):
+    if length >= 8:
+        pwd = ''
+        try:
+            for i in range(length):
+                pwd += ''.join(secrets.choice(char_range))
+            print(f'Generated password:\n{pwd}')
+        except:
+            print('There was an error!')
+
+
 def main():
     args = sys.argv[1:]
 
@@ -17,28 +28,12 @@ def main():
     if args[0] != '--charonly':
         pwd_length = int(args[0])
         alphabet = letters + digits + special_chars
-        if pwd_length >= 8:
-            pwd = ''
-            try:
-                for i in range(pwd_length):
-                    pwd += ''.join(secrets.choice(alphabet))
-                print(f'Generated password:\n{pwd}')
-                # return (pwd)
-            except:
-                print("There was an error! (1)")
+        generate_password(pwd_length, alphabet)
 
     if args[0] == '--charonly':
         pwd_length = int(args[1])
         alphabet = letters + digits
-        if pwd_length >= 8:
-            pwd = ''
-            try:
-                for i in range(pwd_length):
-                    pwd += ''.join(secrets.choice(alphabet))
-                print(f'Generated password:\n{pwd}')
-                # return (pwd)
-            except:
-                print("There was an error! (2)")
+        generate_password(pwd_length, alphabet)
 
 
 if __name__ == '__main__':
