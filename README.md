@@ -1,7 +1,9 @@
 # password_generator
+
 Python password generator
 
 USAGE:
+
 ```
  python3 pwgen.py [--charonly] password_length
 ```
@@ -9,7 +11,16 @@ USAGE:
 I have created this script so I am able to generate passwords through my shell.
 
 In order to use this functionality you have to create an alias for your shell(configure the code for your own shell):
+
 ```
 echo "alias pwgen='/path/to/python3 /path/to/pwgen.py'" >> ~/.zshrc
-source ~/.zshrc 
+source ~/.zshrc
+```
+
+NOTICE:
+
+Before using this password generator, use :
+
+```
+/path/to/pip3 install -r requirements.txt
 ```
