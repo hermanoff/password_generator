@@ -15,8 +15,8 @@ def main():
         sys.exit(1)
 
     if args[0] != '--charonly':
-        alphabet = letters + digits + special_chars
         pwd_length = int(args[0])
+        alphabet = letters + digits + special_chars
         if pwd_length >= 8:
             pwd = ''
             try:
@@ -37,7 +37,6 @@ def main():
                     pwd += ''.join(secrets.choice(alphabet))
                 print(f'Generated password:\n{pwd}')
                 # return (pwd)
-
             except:
                 print("There was an error! (2)")
 
