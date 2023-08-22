@@ -1,4 +1,1 @@
-secrets
-string
-sys
-pyperclip
+pyperclip==1.8.2
