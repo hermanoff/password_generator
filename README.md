@@ -8,7 +8,7 @@ USAGE:
  python3 pwgen.py [--charonly] password_length
 ```
 
-I have created this script so I am able to generate passwords through my shell.
+I have created this script so I am able to generate passwords through my shell, with its output already copied to clipboard.
 
 In order to use this functionality you have to create an alias for your shell(configure the code for your own shell):
 
