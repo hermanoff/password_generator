@@ -24,3 +24,12 @@ Before using this password generator, use :
 ```
 /path/to/pip3 install -r requirements.txt
 ```
+
+IT IS ALSO IMPORTANT FOR YOUR PYTHON AND PIP PACKAGES TO BE READ FROM THE SAME PLACE IN ORDER FOR THIS TO WORK PROPERLY
+
+-   Mac users will probably encounter this error, to resolve, use full path to your python and pip packages, for example:
+
+```
+  /opt/homebrew/bin/pip3 install -r requirements
+  /opt/homebrew/bin/python3.10 pwgen.py
+```
