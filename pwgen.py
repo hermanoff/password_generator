@@ -8,7 +8,7 @@ digits = string.digits
 special_chars = string.punctuation
 
 
-def generate_password(char_range: str, length: int = 32) -> str | sys.exit:
+def generate_password(length: int, char_range: str) -> str | None:
     """Password generator, for given alphabet and length
 
     Args:
@@ -20,7 +20,7 @@ def generate_password(char_range: str, length: int = 32) -> str | sys.exit:
     """
     if length >= 8:
         password = ""
-        for i in range(length):
+        for _ in range(length):
             password += "".join(secrets.choice(char_range))
         return password
     else:
